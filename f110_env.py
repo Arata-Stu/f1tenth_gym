@@ -127,6 +127,10 @@ class F110Env(gym.Env):
         except:
             self.params = {'mu': 1.0489, 'C_Sf': 4.718, 'C_Sr': 5.4562, 'lf': 0.15875, 'lr': 0.17145, 'h': 0.074, 'm': 3.74, 'I': 0.04712, 's_min': -0.4189, 's_max': 0.4189, 'sv_min': -3.2, 'sv_max': 3.2, 'v_switch': 7.319, 'a_max': 9.51, 'v_min':-5.0, 'v_max': 20.0, 'width': 0.31, 'length': 0.58}
 
+        try:
+            self.num_beams = kwargs['num_beams']
+        except:
+            self.num_beams = 20
         # simulation parameters
         try:
             self.num_agents = kwargs['num_agents']
@@ -180,8 +184,6 @@ class F110Env(gym.Env):
         self.start_thetas = np.zeros((self.num_agents, ))
         self.start_rot = np.eye(2)
 
-        #2d lidar laser scan
-        self.num_beams = 20
         # initiate stuff
         self.sim = Simulator(self.params, self.num_beams,  self.num_agents, self.seed, time_step=self.timestep, integrator=self.integrator)
         self.sim.set_map(self.map_path, self.map_ext)

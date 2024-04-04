@@ -30,7 +30,7 @@ from gym import error, spaces, utils
 from gym.utils import seeding
 
 # base classes
-from f110_gym.envs.base_classes import Simulator, Integrator
+from f1tenth_gym.base_classes import Simulator, Integrator
 
 # others
 import numpy as np

@@ -180,8 +180,10 @@ class F110Env(gym.Env):
         self.start_thetas = np.zeros((self.num_agents, ))
         self.start_rot = np.eye(2)
 
+        #2d lidar laser scan
+        self.num_beams = 20
         # initiate stuff
-        self.sim = Simulator(self.params, self.num_agents, self.seed, time_step=self.timestep, integrator=self.integrator)
+        self.sim = Simulator(self.params, self.num_beams,  self.num_agents, self.seed, time_step=self.timestep, integrator=self.integrator)
         self.sim.set_map(self.map_path, self.map_ext)
 
         # stateful observations for rendering

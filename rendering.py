@@ -121,6 +121,7 @@ class EnvRenderer(pyglet.window.Window):
         """
 
         # load map metadata
+        print('map_path',map_path + '.yaml')
         with open(map_path + '.yaml', 'r') as yaml_stream:
             try:
                 map_metadata = yaml.safe_load(yaml_stream)

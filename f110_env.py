@@ -239,7 +239,7 @@ class F110Env(gym.Env):
         
         done = (self.collisions[self.ego_idx]) or np.all(self.toggle_list >= 4)
         
-        return bool(done), self.toggle_list >= 4
+        return bool(done), self.toggle_list >= 8
 
     def _update_state(self, obs_dict):
         """

@@ -44,8 +44,9 @@ ZOOM_IN_FACTOR = 1.2
 ZOOM_OUT_FACTOR = 1/ZOOM_IN_FACTOR
 
 # vehicle shape constants
-CAR_LENGTH = 0.58
-CAR_WIDTH = 0.31
+CAR_LENGTH = 2.00
+CAR_WIDTH = 1.45
+
 
 class EnvRenderer(pyglet.window.Window):
     """

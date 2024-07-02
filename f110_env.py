@@ -130,7 +130,7 @@ class F110Env(gym.Env):
         try:
             self.num_beams = kwargs['num_beams']
         except:
-            self.num_beams = 20
+            self.num_beams = 50
         # simulation parameters
         try:
             self.num_agents = kwargs['num_agents']
